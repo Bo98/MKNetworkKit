@@ -451,8 +451,6 @@ static NSOperationQueue *_sharedNetworkQueue;
   });
 }
 
-#if TARGET_OS_IPHONE
-
 - (MKNetworkOperation*)imageAtURL:(NSURL *)url completionHandler:(MKNKImageBlock) imageFetchedBlock errorHandler:(MKNKResponseErrorBlock) errorBlock {
  
 #ifdef DEBUG
@@ -483,6 +481,7 @@ static NSOperationQueue *_sharedNetworkQueue;
   return op;
 }
 
+#if TARGET_OS_IPHONE
 - (MKNetworkOperation*)imageAtURL:(NSURL *)url size:(CGSize) size completionHandler:(MKNKImageBlock) imageFetchedBlock errorHandler:(MKNKResponseErrorBlock) errorBlock {
     
 #ifdef DEBUG
